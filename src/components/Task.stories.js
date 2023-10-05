@@ -2,34 +2,35 @@ import React from "react";
 import Task from "./Task";
 
 export default {
-    component: Task,
-    title: 'Task',
-}
-
-const Template = (args) => <Task {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-    task: {
-        id: '1',
-        title: 'Test Task',
-        state: 'TASK_INBOX',
-        updateAt: new Date(2021, 0, 1, 9, 0),
-    },
+  component: Task,
+  title: "Task",
+  tags: ["autodocs"],
 };
 
-export const Pinned = Template.bind({});
-Pinned.args = {
+export const Default = {
+  args: {
     task: {
-        ...Default.args.task,
-        state: 'Task_PINNED',
+      id: "1",
+      title: "Test Task",
+      state: "TASK_INBOX",
     },
+  },
 };
 
-export const Archived = Template.bind({});
-Archived.args = {
+export const Pinned = {
+  args: {
     task: {
-        ...Default.args.task,
-        state: 'TASK_ARCHIVED',
+      ...Default.args.task,
+      state: "TASK_PINNED",
     },
+  },
+};
+
+export const Archived = {
+  args: {
+    task: {
+      ...Default.args.task,
+      state: "TASK_ARCHIVED",
+    },
+  },
 };
